@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
 
+import re
+import pytz
+import datetime
 
 def get_year_from_tag(tag):
     m = re.search('(\d{4})年', tag.text)
