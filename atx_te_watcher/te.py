@@ -16,7 +16,7 @@ class TePageCrawler:
     __soup = None
 
     def __init__(self):
-        pass
+        self.__timezone = 'Asia/Tokyo'
     
     def start(self):
         options = Options()
@@ -56,7 +56,7 @@ class TePageCrawler:
             for day in days:
                 yyyy = get_year_from_tag(year)
                 mo, day, h, m = get_day_from_tag(day)
-                date = create_datetime(yyyy, mo, day, h, m, 'Asia/Tokyo')
+                date = create_datetime(yyyy, mo, day, h, m, self.__timezone)
                 # entry = TePageCrawlerShedule(len(schedule_list), date.timestamp(), story_number.text)
                 entry = TePageCrawlerShedule(len(schedule_list), date, story_number.text)
                 schedule_list.append(entry)
